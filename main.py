@@ -1,37 +1,53 @@
 import torch
 from diffusers import StableDiffusionPipeline
-
 import argparse
+from dotenv import load_dotenv
+import os
 
 parser = argparse.ArgumentParser(
-    description='Generating Images from Text. You can use GPU/CPU'
+    description=
+        'Generating Images from Text. You can use GPU/CPU'
 )
-parser.add_argument('prompt', metavar='N', type=str, nargs='+',
+parser.add_argument('prompt', 
+metavar='N', type=str, nargs='+',
                     help='Please enter a text.')
 
-parser.add_argument('--no_cuda', 
-    default=True, 
-    action="store_false",
-    help="If Cuda should be used.")
-
 args = parser.parse_args()
-
 prompt = " ".join(args.prompt)
-cuda = not args.no_cuda
 
-access_token = "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" # This is invalid
+load_dotenv()
+hf_access_token = os.getenv("HF_TOKEN")
+
+cuda_available = torch.cuda.is_available()
+
 pipeline = StableDiffusionPipeline.from_pretrained(
     "CompVis/stable-diffusion-v1-4",
     revision="fp16",
     torch_dtype=torch.float16,
-    use_auth_token=access_token
+    use_auth_token=hf_access_token
 )
 
-pipe = pipeline.to("cuda")
+print("before casting")
+
+if cuda_available:
+    pipe = pipeline.to("cuda")
+else:
+    pipe = pipeline
+
+print("after casting")
 
 def generation(prompt: str):
+    print("before attention slicing")
     pipe.enable_attention_slicing()
-    with torch.autocast('cuda'):
+    print("After attention slicing")
+    if cuda_available:
+        with torch.autocast('cuda'):
+            return pipe(prompt).images[0]
+    with torch.autocast('cpu'):
         return pipe(prompt).images[0]
 
+    pass
 
+
+image = generation(prompt)
+image.save("./images/"+prompt+".png")

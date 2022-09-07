@@ -1,6 +1,9 @@
 # Stable Diffusion Collection
 This is a very simple example of stable diffusion and collection of example.
 
+## Note.
+Upload interesting images as a push request.
+
 ## How to run on [Google Colab](https://colab.research.google.com/notebooks/empty.ipynb)
 
 Please enable cuda/GPU. Runtime > Change runtime type > Hardware Accelerator change to GPU.\
@@ -31,6 +34,12 @@ def generation(prompt: str):
 generation("A man fighting the east indian company in india, 4k, detailed, trending in artstation")
 ```
 
-## Note. 
+## How to run from CMD
 
-Make a push request for the images, if you find something nice.
+You environment should have cuda/gpu.  
+And there should be a token in your .env file with the name of "HF_TOKEN"
+
+```bash
+pip install -r requirements.txt
+python3 main.py A man fighting the east indian company in india, 4k, detailed, trending in artstation
+```
