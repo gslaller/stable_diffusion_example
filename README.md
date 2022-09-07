@@ -2,6 +2,8 @@
 This is a very simple example of stable diffusion and collection of example.\
 CUDA is needed.
 
+![Screenshot](pub/main.png)
+
 ## Note.
 Upload interesting images as a push request.
 
