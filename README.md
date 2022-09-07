@@ -1,4 +1,4 @@
-# Stable Diffusion example
+# Stable Diffusion Collection
 This is a very simple example of stable diffusion and collection of example.
 
 ## How to run on [Google Colab](https://colab.research.google.com/notebooks/empty.ipynb)
