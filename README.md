@@ -4,7 +4,7 @@ This is a very simple example of stable diffusion and collection of example.
 ## How to run on [Google Colab](https://colab.research.google.com/notebooks/empty.ipynb)
 
 Please enable cuda/GPU. Runtime > Change runtime type > Hardware Accelerator change to GPU.\
-You also need to register on huggingface.co & ask for access permission [for this repo](https://huggingface.co/CompVis/stable-diffusion-v1-4) and replace the token access_token. The token in this code is INVALID.
+You also need to register on [huggingface.co](https://huggingface.co) & ask for access permission [for this repo](https://huggingface.co/CompVis/stable-diffusion-v1-4) and replace the token access_token. The token in this code is INVALID.
 
 ```
 !pip install git+https://github.com/huggingface/diffusers.git
@@ -33,4 +33,4 @@ generation("A man fighting the east indian company in india, 4k, detailed, trend
 
 ## Note. 
 
-Make a pull request for the images, if you find something nice.
+Make a push request for the images, if you find something nice.
