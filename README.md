@@ -3,7 +3,7 @@ This is a very simple example of stable diffusion and collection of example.
 
 ## How to run on google Colab
 
-Please enable cuda/GPU. Runtime > Change runtime type > Hardware Accelerator change to GPU
+Please enable cuda/GPU. Runtime > Change runtime type > Hardware Accelerator change to GPU. 
 You also need to register on huggingface.co & ask for access permission [for this repo](https://huggingface.co/CompVis/stable-diffusion-v1-4) and replace the token access_token. The token in this code is INVALID.
 
 ```
