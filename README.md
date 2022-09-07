@@ -1,5 +1,6 @@
 # Stable Diffusion Collection
-This is a very simple example of stable diffusion and collection of example.
+This is a very simple example of stable diffusion and collection of example.\
+CUDA is needed.
 
 ## Note.
 Upload interesting images as a push request.
