@@ -12,7 +12,7 @@ Please enable cuda/GPU
 import torch
 from diffusers import StableDiffusionPipeline
 
-access_token = "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" # Man muss sich bei huggingface.co registerien und die Zugangsberechtigung für das Repo anfordern.
+access_token = "hf_" # Man muss sich bei huggingface.co registerien und die Zugangsberechtigung für das Repo anfordern.
 pipeline = StableDiffusionPipeline.from_pretrained(
     "CompVis/stable-diffusion-v1-4",
     revision="fp16",
